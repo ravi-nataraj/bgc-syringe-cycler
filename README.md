@@ -6,7 +6,7 @@ cylinders in parallel, each pushing a syringe plunger. Cycle timing and
 count are configurable from a phone over WiFi, or the fixture runs from
 a single button using its defaults.
 
-![The assembled rig](docs/images/rig.jpegs)
+![The assembled rig](docs/images/rig.jpeg)
 
 ---
 
