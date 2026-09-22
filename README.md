@@ -1,24 +1,14 @@
 # BGC Syringe Cycler
 
-Ten-station pneumatic fatigue cycling fixture for balloon guide catheter
-inflation testing. A single 5/2 solenoid valve drives ten double-acting
-air cylinders in parallel, each actuating a 1 mL Merit Medical Medallion
-syringe. Pusher and mount spacing fixes the stroke to displace ~0.6 mL
-per cycle.
+Ten-station pneumatic fatigue cycling fixture for balloon guide catheter inflation testing. A single 5/2 solenoid valve drives ten double-acting air cylinders in parallel, each actuating a 1 mL Merit Medical Medallion syringe. Pusher and mount spacing fixes the stroke to displace ~0.6 mL per cycle.
 
 The cycling regime is adapted from ISO 10555-4:2023 Annex B (balloon
 fatigue / repeated inflation). Annex B is written for dilatation
-balloons and cycles to rated burst pressure; a balloon guide catheter is
-specified by recommended inflation volume rather than RBP, so the
-fixture cycles a fixed displaced volume instead. Annex B's default of 10
-cycles is likewise adapted — the fixture defaults to 20 — which the
-standard permits where supported by risk assessment.
+balloons and cycles to rated burst pressure; a balloon guide catheter is specified by recommended inflation volume rather than RBP, so the fixture cycles a fixed displaced volume instead. Annex B's default of 10 cycles is likewise adapted — the fixture defaults to 20 — which the standard permits where supported by risk assessment.
 
 Cycle timing is configurable to accommodate different test fluids —
 viscous media such as contrast refill the syringe more slowly than
-saline or DI water. Timing and cycle count can be set from any device
-over WiFi, or the fixture can be run from a single button using its DI
-water / saline defaults (60s on, 10s off, 20 cycles).
+saline or DI water. Timing and cycle count can be set from any device over WiFi, or the fixture can be run from a single button using its DI water / saline defaults (60s on, 10s off, 20 cycles).
 ![The assembled rig](docs/images/rig.jpeg)
 
 ---
@@ -165,7 +155,7 @@ Arduino IDE with the ESP32 board package installed.
 |---|---|
 | Board | XIAO_ESP32C3 |
 | USB CDC On Boot | **Enabled** — required, or Serial does nothing |
-| Upload speed | 921600 |
+| Upload spesed | 921600 |
 | Serial monitor | 115200 |
 
 Program the XIAO out of its socket, plugged straight into USB.
@@ -182,16 +172,14 @@ Work through these in order.
 1. **Unpowered.** Check continuity between +12 V and GND — should be
    open. A beep means a short; find it before applying power.
 2. **12 V in, XIAO out of its socket.** Meter TP4 for 5.00 V.
-3. **Power down, insert the XIAO, power up.** The serial banner should
-   print and the LED should respond to the button.
+3. **Power down, insert the XIAO, power up.** The serial banner should print and the LED should respond to the button.
 4. **Connect the coil.** Listen for two clicks per cycle, one on and
    one off. No air yet.
-5. **Connect air** at 60 psi and run three cycles before committing to
-   a full run.
+5. **Connect air** at 60 psi and run three cycles before committing to a full run.
 
 ---
 
-## Known limitation
+## Known limitations
 
 - Ten cylinders move together. There is no independent station control.
 - Timing is open loop. The fixture does not confirm that a cylinder
