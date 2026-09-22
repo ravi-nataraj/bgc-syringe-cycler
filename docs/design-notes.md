@@ -37,7 +37,7 @@ Cylinder ports are 10-32.
 
 The valve is pilot-operated — incoming air pressure shifts the spool
 and the solenoid only gates the pilot. **Below 44 psi it will not shift
-reliably.** That is a hard floor, not a guideline.
+reliably.**
 
 Force is not the constraint. At 60 psi the 7/16" bore produces about
 40 N gross, roughly 24 N net after meter-out back pressure, against a
