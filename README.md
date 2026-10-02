@@ -181,8 +181,8 @@ Work through these in order.
 
 ## Known limitations
 
-- Ten cylinders move together. There is no independent station control.
-- Timing is open loop. The fixture does not confirm that a cylinder
-  actually reached its end of travel.
-- The WiFi access point is open to anyone in range who knows the
-  password. It is a DV bench fixture, not a secured instrument.
+- **No independent station control.** All ten cylinders actuate together from a shared supply. A single station cannot be paused, removed, or run on a different profile mid-test.
+- **Ten units per run.** Each run tests ten units (one lot). A 29-unit attribute sample therefore takes three runs (10/10/9), with one station left empty on the final run.
+- **Open-loop timing.** Stroke timing is fixed in firmware. The fixture does not confirm that each cylinder reached its end of travel, so a stalled or short-stroked station will not be flagged. Verify stroke by visual inspection.
+- **Aggressive return stroke.** The return stroke can retract the plunger fast enough to pull the white plunger rod out of the plunger stopper. Inspect plunger assemblies periodically during long cycle runs.
+- **Limited network security.** The WiFi access point is protected only by a shared password and has no user authentication or access logging. It is intended as a DV bench fixture, not a secured or validated instrument.
